@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: url("./assets/sunset-beach-sea-wave.jpg");
+	color: white;
+	font-family: "Lato", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	overflow-x: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	background-color: (0, 0, 0, 0.4);
+}
+
+.top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.input {
+	background-color: #212121;
+	max-width: 130px;
+	height: 20px;
+	padding: 10px;
+	border: 2px solid white;
+	border-radius: 5px;
+	transition: transform 0.3s, box-shadow 0.3s, outline-color 0.3s, color 0.3s;
+}
+
+.input:focus {
+	color: rgb(0, 255, 255);
+	background-color: #212121;
+	outline-color: rgb(0, 255, 255);
+	box-shadow: -3px -3px 15px rgb(0, 255, 255);
+	transition: transform 0.3s, box-shadow 0.3s, outline-color 0.3s, color 0.3s;
+	transform: scale(1.2);
+}
+
+.bottom {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	padding: 10px;
+}
+
+.app {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-color: (0, 0, 0, 0.4);
+}
+
+.feels {
+	border-radius: 5px;
+	background-color: #f9a825;
+	box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.1),
+		2px 2px 10px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.wind {
+	max-width: 185px;
+	border-radius: 5px;
+	background-color: #81d4fa;
+	box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.1),
+		2px 2px 10px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.humidity {
+	border-radius: 5px;
+	background-color: #66bb6a;
+	box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.1),
+		2px 2px 10px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+p {
+	margin: 10px;
+	padding: 5px;
+	font-size: 1.6rem;
+}
+h1 {
+	margin-top: 20px;
+	padding: 10px;
+	font-size: 3rem;
+}
+div {
+	margin: 5px;
+	padding: 2px;
+	font-size: 1.2rem;
+}
+
+.container {
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.location,
+.date,
+.temp,
+.desc {
+	text-align: center;
+}
+
+.feels,
+.humidity,
+.wind {
+	flex: 1;
+	text-align: center;
+	padding: 10px;
+}
+
+.feels:hover,
+.humidity:hover,
+.wind:hover {
+	transform: scale (1 0.05);
+	box-shadow: -4px -4px 20px rgba (255, 255, 255, 0.1),
+		4px 4px 20px rgba (0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+	.top {
+		/*align the items in a way where each 2 elements are next to each other and the third one is below them*/
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+		grid-template-areas:
+			"input location"
+			"temp desc "
+			"date date";
+	}
+	.top {
+		grid-area: input;
+	}
+
+	.location {
+		grid-area: location;
+	}
+
+	.date {
+		grid-area: date;
+	}
+
+	.temp {
+		grid-area: temp;
+	}
+
+	.desc {
+		grid-area: desc;
+	}
+
+	.bottom {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.wind {
+		grid-column: span 2;
+	}
+}
