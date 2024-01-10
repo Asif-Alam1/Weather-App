@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 function App() {
+	const dates = new Date().toISOString;
+	console.log(dates);
 	const [location, setLocation] = useState("");
 	const [data, setData] = useState({});
 	const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c7a7978476b6c2952e9226901aff4450&units=metric`;
